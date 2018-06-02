@@ -1,0 +1,12 @@
+Simple Movement System
+Main Goals:
+  ✔ Moveable character @done(18-03-31 17:22)
+
+Side Goals
+Character:
+  ☐ fluid movement - maybe implement momentum
+  ☐ texture - animated?
+
+Background:
+  ☐ some actual system
+  ☐ dynamic
