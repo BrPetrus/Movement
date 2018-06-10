@@ -5,7 +5,13 @@ Main Goals:
 Side Goals
 Character:
   ☐ fluid movement - maybe implement momentum
+  Movement:
+    
   ☐ texture - animated?
+
+Utilities:
+  ✔ delta time function and fps counter @done(18-06-10 23:51)
+  ☐ move delta time to scope main and optimise the function calculateFPS()
 
 Background:
   ☐ some actual system
