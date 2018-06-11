@@ -9,6 +9,8 @@ Character:
   ✔ fluid movement - using forces, mass, vel, pos @done(18-06-11 21:52)
   Currently you fly in space. 
 
+  ✔ Implement window bounds check @done(18-06-11 22:24)
+
   ☐ texture - animated?
 
 Utilities:

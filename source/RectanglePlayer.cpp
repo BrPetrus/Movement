@@ -42,6 +42,21 @@ void RectanglePlayer::update(double deltaTime, float thrust) {
 
     float posX = _position.x + _velocity.x*deltaTime + 0.5*deltaTime*deltaTime*_acceleration.x;
     float posY = _position.y + _velocity.y*deltaTime + 0.5*deltaTime*deltaTime*_acceleration.y;
+
+    // Outside border right
+    if(posX > 800) {
+        posX = 0;
+    }
+    else if(posX < 0) {
+        posX = 800;
+    }
+    if(posY > 800) {
+        posY = 0;
+    }
+    else if(posY < 0) {
+        posY = 800;
+    }
+
     _position = sf::Vector2f(posX, posY);
     _shape.setPosition(_position);
 
