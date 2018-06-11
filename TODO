@@ -11,7 +11,7 @@ Character:
 
 Utilities:
   ✔ delta time function and fps counter @done(18-06-10 23:51)
-  ☐ move delta time to scope main and optimise the function calculateFPS()
+  ✔ move delta time to scope main and optimise the function calculateFPS() @done(18-06-11 17:40)
 
 Background:
   ☐ some actual system

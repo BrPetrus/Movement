@@ -8,7 +8,8 @@
 
 #include "RectanglePlayer.hpp"
 
-void calculateFPS();
+double calculateFPS(double deltaTime);
+void calculateAndPrintFPS();
 
 const int WINDOW_HEIGH = 800;
 const int WINDOW_WIDTH = 800;
@@ -20,14 +21,19 @@ int main()
     sf::RenderWindow window(sf::VideoMode(WINDOW_WIDTH, WINDOW_HEIGH), "Simple Movement System");
     window.setFramerateLimit(60);
 
-    // Initialize timer
-
+    
     RectanglePlayer player(sf::Vector2f(50, 50), sf::Vector2f(100, 100), sf::Color::Yellow);
+    
+    // Initialize timer
+    std::chrono::time_point<std::chrono::high_resolution_clock> start = std::chrono::high_resolution_clock::now();
+
 
     // Run the program
     while (window.isOpen())
     {
-        calculateFPS();
+        std::chrono::time_point<std::chrono::high_resolution_clock> end = std::chrono::high_resolution_clock::now();
+        auto deltaTime = std::chrono::duration_cast<std::chrono::duration<double, std::milli>>(end - start).count();
+        //std::cout << calculateFPS(deltaTime) << std::endl;
 
         // Events
         sf::Event event;
@@ -45,9 +51,20 @@ int main()
         window.clear(sf::Color::Green);
         window.draw(player);
         window.display();
-    }
 
+        start=end;
+    }
     return 0;
+}
+
+/**
+ * \brief Calculates FPS.
+ * 
+ * Calculates FPS from deltaTime and returns it.
+ */
+double calculateFPS(double deltaTime)
+{
+    return (1/(deltaTime/1000));
 }
 
 /**
@@ -55,7 +72,7 @@ int main()
  * 
  * Keeps track of how many frames passed over a set interval and calculates FPS, which is then printed out using std::cout.
  */
-void calculateFPS()
+void calculateAndPrintFPS()
 {
     static std::chrono::time_point<std::chrono::high_resolution_clock> start = std::chrono::high_resolution_clock::now();
     static int frames = 1;
