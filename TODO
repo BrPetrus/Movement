@@ -1,12 +1,14 @@
 Simple Movement System
 Main Goals:
   ✔ Moveable character @done(18-03-31 17:22)
+  ✔ Rewrite the physics system @done(18-06-11 21:52)
 
 Side Goals
 Character:
-  ☐ fluid movement - maybe implement momentum
-  Movement:
-    
+  ✘ fluid movement - maybe implement momentum @cancelled(18-06-11 21:51)
+  ✔ fluid movement - using forces, mass, vel, pos @done(18-06-11 21:52)
+  Currently you fly in space. 
+
   ☐ texture - animated?
 
 Utilities:

@@ -22,7 +22,7 @@ int main()
     window.setFramerateLimit(60);
 
     
-    RectanglePlayer player(sf::Vector2f(50, 50), sf::Vector2f(100, 100), sf::Color::Yellow);
+    RectanglePlayer player(sf::Vector2f(50,50), sf::Vector2f(0,0), sf::Vector2f(0,0), sf::Vector2f(10,10), sf::Color::White, (float)1.0);
     
     // Initialize timer
     std::chrono::time_point<std::chrono::high_resolution_clock> start = std::chrono::high_resolution_clock::now();
@@ -45,10 +45,10 @@ int main()
             }
         }
 
-        player.update();
+        player.update(deltaTime, 0.001f);
 
         // Background
-        window.clear(sf::Color::Green);
+        window.clear(sf::Color::Black);
         window.draw(player);
         window.display();
 
